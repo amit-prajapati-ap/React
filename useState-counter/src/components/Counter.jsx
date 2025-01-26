@@ -2,11 +2,18 @@ import React, { useState } from 'react'
 import "./counter.css"
 
 const Counter = () => {
-    const [count, setCount] = useState(0);
+    let [count, setCount] = useState(0);
+    const incre = () => {
+      if(count < 20) setCount(count + 1);
+    }
+    const decre = () => {
+      if(count > 0) setCount(count - 1);
+    }
   return (
     <div className='counter-container'>
-      <p id='para'>You have clicked {count} times</p>
-      <button id='btn' onClick={() => { setCount(count+1) }}>Click me</button>
+      <p id='para'>Counter Value {count}</p>
+      <button id='Increamentbtn' onClick={() => incre()}>Increament {count}</button>
+      <button id='Decreamentbtn' onClick={() => decre()}>Decreament {count}</button>
     </div>
   )
 }
