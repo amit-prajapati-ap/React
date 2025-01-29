@@ -5,13 +5,16 @@ const ResizeComponent = () => {
 
     useEffect(() => {
       const handleResize = () => setWindowWidth(window.innerWidth)
-
+      console.log("Event Listener Added")
+      
       window.addEventListener("resize", handleResize)
-    
+      
       return () => {
+        console.log("Event Listener Removed")
         window.removeEventListener("resize", handleResize)
       }
     }, [])
+    //It will run on 1st render only
     
   return (
     <div>
