@@ -1,3 +1,5 @@
+// useMemo Hook
+
 import React, { useMemo, useState } from "react";
 
 const App = () => {
@@ -11,7 +13,6 @@ const App = () => {
   };
 
   useMemo(() => expensiveTask(input), [input])
-  
   let doubleValue = input;
 
   return (
